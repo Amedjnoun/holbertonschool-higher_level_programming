@@ -10,6 +10,7 @@ class Fish:
     def habitat(self):
         print("The fish lives in water")
 
+
 class Bird:
     """
     Bird class with fly and habitat methods.
@@ -19,6 +20,7 @@ class Bird:
 
     def habitat(self):
         print("The bird lives in the sky")
+
 
 class FlyingFish(Fish, Bird):
     """

@@ -2,7 +2,8 @@
 
 class CountedIterator:
     """
-    A class that extends the built-in iterator to keep track of the number of items iterated over.
+    A class that extends the built-in iterator to keep track of the number of
+    items iterated over.
     """
     def __init__(self, iterable):
         self.iterator = iter(iterable)

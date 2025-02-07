@@ -2,6 +2,7 @@
 from abc import ABC, abstractmethod
 import math
 
+
 class Shape(ABC):
     """
     Abstract class representing a shape.
@@ -13,6 +14,7 @@ class Shape(ABC):
     @abstractmethod
     def perimeter(self):
         pass
+
 
 class Circle(Shape):
     """
@@ -27,6 +29,7 @@ class Circle(Shape):
     def perimeter(self):
         return 2 * math.pi * self.radius
 
+
 class Rectangle(Shape):
     """
     Rectangle class inheriting from Shape.
@@ -40,6 +43,7 @@ class Rectangle(Shape):
 
     def perimeter(self):
         return 2 * (self.width + self.height)
+
 
 def shape_info(shape):
     """
