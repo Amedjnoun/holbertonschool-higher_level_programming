@@ -13,6 +13,14 @@ class CustomObject:
     """
 
     def __init__(self, name, age, is_student):
+        """
+        __init__ constructor
+
+        Args:
+            name (string): name of the user
+            age (int): age of the user
+            is_student (bool): true / false if is a student
+        """
         self.name = name
         self.age = age
         self.is_student = is_student
