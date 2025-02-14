@@ -14,7 +14,7 @@ class CustomObject:
 
     def __init__(self, name, age, is_student):
         """
-        __init__ constructor
+        __init__ method to initialize the CustomObject attributes.
 
         Args:
             name (string): name of the user
@@ -52,7 +52,7 @@ class CustomObject:
             filename (str): The filename to load the serialized object from.
 
         Returns:
-            CustomObject: The deserialized object.
+            object: The deserialized object or None if an error occurs.
         """
         try:
             with open(filename, 'rb') as f:
