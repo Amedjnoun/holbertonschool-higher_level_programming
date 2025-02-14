@@ -3,6 +3,7 @@
 Module that defines the Student class.
 """
 
+
 class Student:
     """
     A class that defines a student.
