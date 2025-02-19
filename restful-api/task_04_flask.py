@@ -1,6 +1,13 @@
 #!/usr/bin/python3
 """
-
+This module contains a simple Flask API with several endpoints to manage user
+data.
+Endpoints:
+- /: Home route, returns a welcome message.
+- /data: Returns a list of all usernames.
+- /status: Returns a status message.
+- /users/<username>: Returns data for a specific user.
+- /add_user: Adds a new user to the users dictionary.
 """
 
 from flask import Flask, jsonify, request
