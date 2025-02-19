@@ -10,19 +10,10 @@ Endpoints:
 - /add_user: Adds a new user to the users dictionary.
 """
 
-from flask import Flask, jsonify, request  # type: ignore
+
+from flask import Flask, jsonify, request
 
 app = Flask(__name__)
-
-users = {
-    "jane": {
-        "username": "jane",
-        "name": "Jane",
-        "age": 28,
-        "city": "Los Angeles"
-    },
-    "john": {"username": "john", "name": "John", "age": 30, "city": "New York"}
-}
 
 
 @app.route('/')
@@ -57,6 +48,17 @@ def add_user():
         return jsonify({"error": "Username is required"}), 400
     users[username] = data
     return jsonify({"message": "User added", "user": data}), 201
+
+
+users = {
+    "jane": {
+        "username": "jane",
+        "name": "Jane",
+        "age": 28,
+        "city": "Los Angeles"
+    },
+    "john": {"username": "john", "name": "John", "age": 30, "city": "New York"}
+}
 
 
 if __name__ == "__main__":
