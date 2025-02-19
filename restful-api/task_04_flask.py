@@ -10,7 +10,7 @@ Endpoints:
 - /add_user: Adds a new user to the users dictionary.
 """
 
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request  # type: ignore
 
 app = Flask(__name__)
 
