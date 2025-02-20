@@ -67,6 +67,8 @@ def add_user():
                 age = int(age)
             except (ValueError, TypeError):
                 return jsonify({"error": "Age must be an integer"}), 400
+        if 'name' not in data:
+            return jsonify({"error": "Name is required"}), 400
         if 'city' not in data:
             return jsonify({"error": "City is required"}), 400
         users[username] = {
