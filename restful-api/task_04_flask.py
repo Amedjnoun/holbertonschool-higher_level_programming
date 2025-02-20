@@ -22,7 +22,7 @@ users = {}
 
 @app.route('/')
 def home():
-    return "Welcome to the Flask API!"
+    return "Welcome to the Flask API!", 200
 
 
 @app.route('/status')
@@ -79,7 +79,7 @@ def add_user():
         }
 
         return jsonify({
-            "message": "User added successfully",
+            "message": "User added successfully", 201
             "user": users[username]
         }), 201
     except Exception as e:
