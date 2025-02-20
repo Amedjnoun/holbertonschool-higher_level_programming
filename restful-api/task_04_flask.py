@@ -86,6 +86,22 @@ def add_user():
         return jsonify({"error": str(e)}), 500
 
 
+users = {
+    "jane": {
+        "username": "jane",
+        "name": "Jane",
+        "age": 28,
+        "city": "Los Angeles"
+    },
+    "john": {
+        "username": "john",
+        "name": "John",
+        "age": 30,
+        "city": "New York"
+    }
+}
+
+
 @app.errorhandler(404)
 def not_found(error):
     """Handle 404 errors"""
