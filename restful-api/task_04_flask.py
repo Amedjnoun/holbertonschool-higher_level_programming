@@ -57,10 +57,18 @@ def add_user():
         username = data.get('username')
         if not username:
             return jsonify({"error": "Username is required"}), 400
-        if not isinstance(data.get('age', 0), int):
-            return jsonify({"error": "Age must be an integer"}), 400
         if username in users:
             return jsonify({"error": "Username already exists"}), 400
+        if 'age' not in data:
+            return jsonify({"error": "Age is required"}), 400
+        age = data.get('age')
+        if age is not None:
+            try:
+                age = int(age)
+            except (ValueError, TypeError):
+                return jsonify({"error": "Age must be an integer"}), 400
+        if 'city' not in data:
+            return jsonify({"error": "City is required"}), 400
         users[username] = {
             "username": username,
             "name": data.get('name', ''),
@@ -72,7 +80,6 @@ def add_user():
             "message": "User added successfully",
             "user": users[username]
         }), 201
-
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
