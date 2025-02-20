@@ -27,7 +27,7 @@ def home():
 
 @app.route('/status')
 def status():
-    return "OK"
+    return "OK", 200
 
 
 @app.route('/data')
