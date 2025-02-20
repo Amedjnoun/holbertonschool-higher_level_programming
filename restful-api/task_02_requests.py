@@ -4,7 +4,7 @@ This module fetches posts from JSONPlaceholder API and performs two operations:
 1. Prints post titles to console
 2. Saves posts data to a CSV file
 """
-import requests
+import requests # type: ignore
 import csv
 
 
