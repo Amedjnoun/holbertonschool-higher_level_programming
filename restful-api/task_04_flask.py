@@ -59,7 +59,12 @@ users = {
         "age": 28,
         "city": "Los Angeles"
     },
-    "john": {"username": "john", "name": "John", "age": 30, "city": "New York"}
+    "john": {
+        "username": "john",
+        "name": "John",
+        "age": 30,
+        "city": "New York"
+    }
 }
 
 
