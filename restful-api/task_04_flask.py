@@ -65,5 +65,11 @@ def add_user():
         return jsonify({"error": str(e)}), 500
 
 
+@app.errorhandler(404)
+def not_found(error):
+    """Handle 404 errors"""
+    return jsonify({"error": "Endpoint not found"}), 404
+
+
 if __name__ == "__main__":
     app.run()
