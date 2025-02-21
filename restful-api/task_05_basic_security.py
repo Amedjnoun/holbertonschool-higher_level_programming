@@ -12,23 +12,20 @@ from flask_jwt_extended import (
 from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
-app.config['JWT_SECRET_KEY'] = 'your_secret_key'  # Change this to a strong
-# secret key
+app.config['JWT_SECRET_KEY'] = 'your_secret_key'
 
 auth = HTTPBasicAuth()
 jwt = JWTManager(app)
 
-# In-memory user storage
+
 users = {
-    "user1": {
-        "username": "user1",
-        "password": generate_password_hash("password"),
-        "role": "user"
-    },
-    "admin1": {
-        "username": "admin1",
-        "password": generate_password_hash("password"),
+    "admin": {
+        "password": generate_password_hash("admin"),
         "role": "admin"
+    },
+    "user": {
+        "password": generate_password_hash("user"),
+        "role": "user"
     }
 }
 
@@ -49,7 +46,6 @@ def basic_protected():
     return jsonify(message="Basic Auth: Access Granted")
 
 
-# JWT Authentication
 @app.route('/login', methods=['POST'])
 def login():
     data = request.get_json()
@@ -80,7 +76,6 @@ def admin_only():
     return jsonify(message="Admin Access: Granted")
 
 
-# Custom error handlers for JWT
 @jwt.unauthorized_loader
 def handle_unauthorized_error(err):
     return jsonify({"error": "Missing or invalid token"}), 401
