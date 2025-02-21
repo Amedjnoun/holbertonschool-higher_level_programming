@@ -1,5 +1,8 @@
 #!/user/bin/python3
 
+"""
+Basic Security
+"""
 
 from flask import Flask, jsonify, request
 from flask_httpauth import HTTPBasicAuth
