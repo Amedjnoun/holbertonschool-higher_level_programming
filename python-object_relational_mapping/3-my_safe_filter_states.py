@@ -1,13 +1,16 @@
 #!/usr/bin/python3
 """
-Script that takes in arguments and displays all values in the states
-table of hbtn_0e_0_usa where name matches the argument.
-This version is safe from MySQL injections.
+Module that retrieves the state name which is safe of any MySQL injections.
+
+After connecting to MySQL server running on localhost
+at port 3306 to access database hbtn_0e_0_usa,
+it returns the state name which is safe of any MySQL injections.
 """
 import MySQLdb
 import sys
 
 if __name__ == "__main__":
+    # Connect to the MySQL database
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
@@ -15,13 +18,23 @@ if __name__ == "__main__":
         passwd=sys.argv[2],
         db=sys.argv[3]
     )
+
+    # Create a cursor object
     cur = db.cursor()
+
+    # Execute the SQL query using parameterized query to prevent SQL injection
     cur.execute(
         "SELECT * FROM states WHERE name = %s ORDER BY id ASC",
         (sys.argv[4],)
     )
+
+    # Fetch all the rows
     rows = cur.fetchall()
+
+    # Print each row
     for row in rows:
         print(row)
+
+    # Close cursor and database connection
     cur.close()
     db.close()
