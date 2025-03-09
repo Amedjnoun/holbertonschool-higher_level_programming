@@ -7,17 +7,23 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
+    # Create engine to connect to MySQL server
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
         sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
 
+    # Create a configured "Session" class
     Session = sessionmaker(bind=engine)
+
+    # Create a Session instance
     session = Session()
 
-    cities = session.query(State, City).\
-        filter(City.state_id == State.id).\
-        order_by(City.id).all()
+    # Query cities and join with states
+    results = session.query(State, City).join(
+        City, State.id == City.state_id).order_by(City.id).all()
 
-    for state, city in cities:
+    # Display results
+    for state, city in results:
         print("{}: ({}) {}".format(state.name, city.id, city.name))
 
+    # Close session
     session.close()
