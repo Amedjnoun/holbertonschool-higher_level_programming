@@ -1,3 +1,11 @@
+#!/usr/bin/python3
+"""
+Module that lists all states from database hbtn_0e_0_usa.
+
+After connecting to MySQL server running on localhost
+at port 3306 to access database hbtn_0e_0_usa,
+it returns all states from database sorted in ascending order by states.id.
+"""
 import MySQLdb
 from sys import argv
 
