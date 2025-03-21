@@ -1,4 +1,11 @@
 #!/usr/bin/python3
+"""
+This module defines the Rectangle class, which represents a rectangle
+with attributes for width, height, and customizable string representation.
+It also tracks the number of instances created.
+"""
+
+
 class Rectangle:
     """Defines a rectangle."""
 
