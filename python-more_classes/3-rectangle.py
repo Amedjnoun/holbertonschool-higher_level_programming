@@ -1,11 +1,13 @@
+#!/usr/bin/python3
 """
 This module defines the Rectangle class, which represents a rectangle
 with attributes for width and height. It includes a __str__ method
 to provide a string representation of the rectangle using the '#' character.
 """
 
-#!/usr/bin/python3
+
 class Rectangle:
+    """Represents a rectangle with string representation using '#'."""
     # ...existing code...
 
     def __str__(self):

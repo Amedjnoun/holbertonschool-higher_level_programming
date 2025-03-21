@@ -7,7 +7,7 @@ the number of instances and prints a message upon deletion.
 
 
 class Rectangle:
-    """Defines a rectangle."""
+    """Represents a rectangle with instance tracking and deletion message."""
 
     number_of_instances = 0
 

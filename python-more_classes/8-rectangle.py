@@ -7,7 +7,7 @@ area, perimeter, and comparing rectangles using a static method.
 
 
 class Rectangle:
-    """Defines a rectangle."""
+    """Represents a rectangle with comparison functionality."""
 
     def __init__(self, width=0, height=0):
         self.width = width

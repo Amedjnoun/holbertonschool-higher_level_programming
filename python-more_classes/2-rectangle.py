@@ -7,7 +7,7 @@ area, perimeter, and string representations of the rectangle.
 
 
 class Rectangle:
-    """Defines a rectangle."""
+    """Represents a rectangle with width, height, area, and perimeter."""
 
     def __init__(self, width=0, height=0):
         self.width = width

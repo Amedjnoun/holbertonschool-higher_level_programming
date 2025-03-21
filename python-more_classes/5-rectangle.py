@@ -7,6 +7,7 @@ that prints a message upon instance deletion.
 
 
 class Rectangle:
+    """Represents a rectangle with a destructor method."""
     # ...existing code...
 
     def __del__(self):

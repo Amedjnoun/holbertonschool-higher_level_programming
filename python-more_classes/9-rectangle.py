@@ -7,7 +7,7 @@ area, perimeter, and creating square instances.
 
 
 class Rectangle:
-    """Defines a rectangle."""
+    """Represents a rectangle with square creation functionality."""
 
     def __init__(self, width=0, height=0):
         self.width = width

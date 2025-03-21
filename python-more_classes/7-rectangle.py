@@ -7,7 +7,7 @@ It also tracks the number of instances created.
 
 
 class Rectangle:
-    """Defines a rectangle."""
+    """Represents a rectangle with customizable string representation."""
 
     number_of_instances = 0
     print_symbol = "#"

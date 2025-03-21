@@ -7,6 +7,7 @@ to provide a string representation for recreating the instance.
 
 
 class Rectangle:
+    """Represents a rectangle with a __repr__ method for recreation."""
     # ...existing code...
 
     def __repr__(self):
